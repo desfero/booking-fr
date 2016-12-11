@@ -9,7 +9,7 @@ import { client } from './app.apollo-client';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 
-import { AuthenticationService } from './authentication.service';
+import { AuthenticationService } from './common/authentication.service.ts';
 import { LoginComponent } from './login/login.component';
 import { SearchComponent } from './search/search.component';
 import { NavbarComponent } from './navbar/navbar.component';
