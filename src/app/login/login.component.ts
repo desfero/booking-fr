@@ -16,11 +16,11 @@ export class LoginComponent {
     private router: Router
   ) {}
 
-  login(username: string, password: string) {
+  login(email: string, password: string) {
     this.resetErrorMessage();
 
     this.authenticationService
-      .login(username, password)
+      .login(email, password)
       .then(() => this.goToSearch())
       .catch((message: string) => this.setErrorMessage(message))
   }

@@ -1,6 +1,6 @@
 <div class="container">
   <form #loginForm="ngForm" class="form-signin"
-        (ngSubmit)="login(username.value, password.value)">
+        (ngSubmit)="login(email.value, password.value)">
     <h2 class="form-signin-heading">Please sign in</h2>
 
     <div *ngIf="backendErrorMessage"
@@ -8,19 +8,19 @@
       {{backendErrorMessage}}
     </div>
     <div class="form-group"
-         [class.has-danger]="username.errors && (username.dirty || username.touched)">
-      <label for="inputUsername" class="sr-only">Username</label>
-      <input type="text"
-             id="inputUsername"
-             name="username"
+         [class.has-danger]="email.errors && (email.dirty || email.touched)">
+      <label for="inputEmail" class="sr-only">Email</label>
+      <input type="email"
+             id="inputEmail"
+             name="email"
              class="form-control"
-             placeholder="Username"
+             placeholder="Email"
              required
              autofocus
-             #username>
-      <div *ngIf="username.errors && (username.dirty || username.touched)"
+             #email>
+      <div *ngIf="email.errors && (email.dirty || email.touched)"
            class="form-control-feedback">
-        <span [hidden]="!username.errors.required">Username is required</span>
+        <span [hidden]="!email.errors.required">Email is required</span>
       </div>
     </div>
     <div class="form-group"

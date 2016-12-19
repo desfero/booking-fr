@@ -13,13 +13,13 @@ export class AuthenticationService {
 
   constructor(private http: Http) { }
 
-  login(username, password): Promise<void>  {
+  login(email, password): Promise<void>  {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
     return this.http
       .post(this.LOGIN_URL, JSON.stringify({
-        username,
+        email,
         password
       }), {
         headers: headers,

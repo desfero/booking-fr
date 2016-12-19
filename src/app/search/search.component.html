@@ -1,3 +1,124 @@
 <div class="container" >
-  search component
+  <form (ngSubmit)="onSubmit()" #searchForm="ngForm">
+    <div class="form-group" [class.has-danger]="from.errors && (from.dirty || from.touched)">
+      <label for="from">From</label>
+      <select id="from"
+              class="form-control"
+              required
+              [(ngModel)]="model.from"
+              name="from"
+              #from="ngModel">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+      <div *ngIf="from.errors && (from.dirty || from.touched)"
+           class="form-control-feedback">
+        <span [hidden]="!from.errors.required">Select departure airport</span>
+      </div>
+    </div>
+    <div class="form-group" [class.has-danger]="to.errors && (to.dirty || to.touched)">
+      <label for="to">To</label>
+      <select id="to"
+              class="form-control"
+              required
+              [(ngModel)]="model.to"
+              name="to"
+              #to="ngModel">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+      <div *ngIf="to.errors && (to.dirty || to.touched)"
+           class="form-control-feedback">
+        <span [hidden]="!to.errors.required">Select destination airport</span>
+      </div>
+    </div>
+    <div class="form-group" [class.has-danger]="departure.errors && (departure.dirty || departure.touched)">
+      <label for="departure">Departure</label>
+      <select id="departure"
+              class="form-control"
+              required
+              [(ngModel)]="model.departure"
+              name="departure"
+              #departure="ngModel">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+      <div *ngIf="departure.errors && (departure.dirty || departure.touched)"
+           class="form-control-feedback">
+        <span [hidden]="!departure.errors.required">Select departure date</span>
+      </div>
+    </div>
+    <div class="form-group" [class.has-danger]="arrival.errors && (arrival.dirty || arrival.touched)">
+      <label for="arrival">Arrival</label>
+      <select id="arrival"
+              class="form-control"
+              required
+              [(ngModel)]="model.arrival"
+              name="arrival"
+              #arrival="ngModel">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+      <div *ngIf="arrival.errors && (arrival.dirty || arrival.touched)"
+           class="form-control-feedback">
+        <span [hidden]="!arrival.errors.required">Select arrival date</span>
+      </div>
+    </div>
+    <div class="form-group" [class.has-danger]="adults.errors && (adults.dirty || adults.touched)">
+      <label for="adults">Adults</label>
+      <input id="adults"
+             type="number"
+             class="form-control"
+             required
+             name="adults"
+             [(ngModel)]="model.adults"
+             #adults="ngModel">
+      <div *ngIf="adults.errors && (adults.dirty || adults.touched)"
+           class="form-control-feedback">
+        <span [hidden]="!adults.errors.required">Provide adults number</span>
+      </div>
+    </div>
+    <div class="form-group" [class.has-danger]="childrens.errors && (childrens.dirty || childrens.touched)">
+      <label for="childrens">Children's</label>
+      <input id="childrens"
+             type="number"
+             class="form-control"
+             required
+             [(ngModel)]="model.childrens"
+             name="childrens"
+             #childrens="ngModel">
+      <div *ngIf="childrens.errors && (childrens.dirty || childrens.touched)"
+           class="form-control-feedback">
+        <span [hidden]="!childrens.errors.required">Provide childrens number</span>
+      </div>
+    </div>
+    <div class="form-group" [class.has-danger]="infants.errors && (infants.dirty || infants.touched)">
+      <label for="infants">Infants</label>
+      <input id="infants"
+             type="number"
+             class="form-control"
+             required
+             [(ngModel)]="model.infants"
+             name="infants"
+             #infants="ngModel">
+      <div *ngIf="infants.errors && (infants.dirty || infants.touched)"
+           class="form-control-feedback">
+        <span [hidden]="!infants.errors.required">Provide infants number</span>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!searchForm.form.valid">Search</button>
+  </form>
 </div>

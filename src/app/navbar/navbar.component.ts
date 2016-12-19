@@ -6,7 +6,9 @@ import gql from 'graphql-tag';
 const CurrentUserForNavbar = gql`
   query CurrentUserForNavbar {
     self {
-      username
+      email,
+      name,
+      surname
     }
   }
 `;
