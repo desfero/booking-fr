@@ -7,6 +7,9 @@
         <li *ngIf="!this.currentUser" class="nav-item">
           <a class="nav-link"  routerLink="/login">Login</a>
         </li>
+        <li *ngIf="!this.currentUser" class="nav-item">
+          <a class="nav-link"  routerLink="/register">Register</a>
+        </li>
         <li *ngIf="this.currentUser" class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown">
             {{currentUser.name + " " + currentUser.surname}}
