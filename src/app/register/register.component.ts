@@ -4,7 +4,7 @@ import { AuthenticationService } from '../common/authentication.service.ts'
 import gql from 'graphql-tag';
 
 const registerUser = gql`
-  mutation signup($name: String!, $surname: String!, $email: String!, $password: String!) {
+  mutation signup($name: String!, $surname: String!, $email: Email!, $password: Password!) {
     signup(name: $name, surname: $surname, email: $email, password: $password) {
       createdAt
     }
@@ -26,9 +26,9 @@ export class RegisterComponent {
       variables: {
         name, surname, email, password
       }
-    }).then(({ data }) => {
+    }).subscribe(({ data }) => {
       console.log('got data', data);
-    }).catch((error) => {
+    }, error => {
       console.log('there was an error sending the query', error);
     });
   }
