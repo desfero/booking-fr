@@ -1,11 +1,11 @@
 export class SearchModel {
-  from:string;
-  to:string;
-  departure:string;
-  arrival:string;
-  adults:number;
-  childrens:number;
-  infants:number;
+  from: string;
+  to: string;
+  departure: string;
+  arrival: string;
+  adults: number;
+  childrens: number;
+  infants: number;
 
   constructor() {
     this.from = "";

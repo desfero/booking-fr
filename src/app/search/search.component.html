@@ -5,14 +5,10 @@
       <select id="from"
               class="form-control"
               required
-              [(ngModel)]="model.from"
+              [(ngModel)]="selectedFrom"
               name="from"
               #from="ngModel">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+        <option *ngFor="let schedule of schedules" value="{{schedule.from}}">{{schedule.from}}</option>
       </select>
       <div *ngIf="from.errors && (from.dirty || from.touched)"
            class="form-control-feedback">
@@ -24,14 +20,11 @@
       <select id="to"
               class="form-control"
               required
-              [(ngModel)]="model.to"
+              [(ngModel)]="selectedTo"
               name="to"
+              [disabled]="!selectedFrom"
               #to="ngModel">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+        <option *ngFor="let schedule of schedulesTo" value="{{schedule.to}}">{{schedule.to}}</option>
       </select>
       <div *ngIf="to.errors && (to.dirty || to.touched)"
            class="form-control-feedback">
@@ -43,14 +36,11 @@
       <select id="departure"
               class="form-control"
               required
-              [(ngModel)]="model.departure"
+              [(ngModel)]="selectedDeparture"
               name="departure"
+              [disabled]="!selectedTo"
               #departure="ngModel">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+        <option *ngFor="let schedule of schedulesTo" value="{{schedule.departure}}">{{schedule.departure}}</option>
       </select>
       <div *ngIf="departure.errors && (departure.dirty || departure.touched)"
            class="form-control-feedback">
@@ -62,14 +52,11 @@
       <select id="arrival"
               class="form-control"
               required
-              [(ngModel)]="model.arrival"
+              [(ngModel)]="selectedArrival"
               name="arrival"
+              [disabled]="!selectedDeparture"
               #arrival="ngModel">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+        <option *ngFor="let schedule of schedulesTo" value="{{schedule.arrival}}">{{schedule.arrival}}</option>
       </select>
       <div *ngIf="arrival.errors && (arrival.dirty || arrival.touched)"
            class="form-control-feedback">
