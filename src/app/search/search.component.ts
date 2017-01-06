@@ -45,7 +45,7 @@ export class SearchComponent implements OnInit {
   }
 
   onSubmit() {
-    let link = ['/seats', this.model];
+    let link = ['/calendar', this.model];
     this.router.navigate(link);
   }
 

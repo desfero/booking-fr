@@ -16,6 +16,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { RegisterComponent } from './register/register.component';
 import { SeatsComponent } from './seats/seats.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SeatsComponent } from './seats/seats.component';
     NavbarComponent,
     MyProfileComponent,
     RegisterComponent,
-    SeatsComponent
+    SeatsComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
