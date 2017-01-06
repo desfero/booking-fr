@@ -40,7 +40,7 @@
               name="departure"
               [disabled]="!selectedTo"
               #departure="ngModel">
-        <option *ngFor="let schedule of schedulesTo" value="{{schedule.departure}}">{{schedule.departure}}</option>
+        <option *ngFor="let departure of schedulesDepartureFormatted" value="{{departure}}">{{departure}}</option>
       </select>
       <div *ngIf="departure.errors && (departure.dirty || departure.touched)"
            class="form-control-feedback">
@@ -52,11 +52,11 @@
       <select id="arrival"
               class="form-control"
               required
-              [(ngModel)]="selectedArrival"
+              [(ngModel)]="model.arrival"
               name="arrival"
               [disabled]="!selectedDeparture"
               #arrival="ngModel">
-        <option *ngFor="let schedule of schedulesTo" value="{{schedule.arrival}}">{{schedule.arrival}}</option>
+        <option *ngFor="let arrival of schedulesArrivalFormatted" value="{{arrival}}">{{arrival}}</option>
       </select>
       <div *ngIf="arrival.errors && (arrival.dirty || arrival.touched)"
            class="form-control-feedback">

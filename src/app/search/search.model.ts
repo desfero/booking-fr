@@ -1,3 +1,5 @@
+import * as moment from 'moment';
+
 export class SearchModel {
   from: string;
   to: string;
@@ -15,5 +17,13 @@ export class SearchModel {
     this.adults = 1;
     this.childrens = 0;
     this.infants = 0;
+  }
+
+  setDeparture(value) {
+    this.departure = moment(value).format('YYYY-MM-DD');
+  }
+
+  setArrival(value) {
+    this.arrival = moment(value).format('YYYY-MM-DD');
   }
 }
