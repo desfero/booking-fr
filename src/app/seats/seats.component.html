@@ -1,3 +1,23 @@
-<p>
-  seats works!
-</p>
+<div class="container" >
+  <form (ngSubmit)="next()" #seatsForm="ngForm">
+    <div *ngFor="let seat of adults$ | async | times" class="form-group"
+         [class.has-danger]="(seatInput + seat).errors && ((seatInput + seat).dirty || (seatInput + seat).touched)" >
+
+      <label for="seat">Adult {{seat + 1}} seat</label>
+      <select id="seat"
+              class="form-control"
+              required
+              [(ngModel)]="adultsSeats[seat]"
+              name="seat"
+              #seatInput{{seat}}="ngModel" >
+        <option *ngFor="let s of seats$ | async" value="{{s}}">{{s}}</option>
+      </select>
+      <!--<div *ngIf="seatInput{{seat}}.errors && (seatInput{{seat}}.dirty || seatInput{{seat}}.touched)"-->
+           <!--class="form-control-feedback">-->
+        <!--<span [hidden]="!seatInput{{seat}}.errors.required">Select seat</span>-->
+      <!--</div>-->
+    </div>
+  </form>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!seatsForm.form.valid">Next</button>
+</div>

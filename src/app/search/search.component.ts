@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Angular2Apollo } from 'angular2-apollo';
-import { SearchModel } from "./search.model";
 import gql from 'graphql-tag';
 import * as moment from 'moment';
 import * as _ from 'lodash';
+import { SearchModel } from "./search.model";
+import { StateService } from '../state.service';
 
 const Schedules = gql`
   query Schedules {
@@ -13,7 +14,9 @@ const Schedules = gql`
 	    departure,
 	    arrival,
 	    from,
-	    to
+	    to,
+	    price,
+	    seats
   	}
   }
 `;
@@ -32,7 +35,7 @@ export class SearchComponent implements OnInit {
   schedulesArrival: Array<any>;
   schedulesArrivalFormatted: Array<any>;
 
-  constructor(private router: Router, private apollo: Angular2Apollo) { }
+  constructor(private router: Router, private apollo: Angular2Apollo, private stateService: StateService) { }
 
   ngOnInit() {
     this.model = new SearchModel();
@@ -45,8 +48,8 @@ export class SearchComponent implements OnInit {
   }
 
   onSubmit() {
-    let link = ['/calendar', this.model];
-    this.router.navigate(link);
+    this.router.navigate(['/calendar', this.model]);
+    this.stateService.changeBooking(this.model);
   }
 
   get selectedFrom() {

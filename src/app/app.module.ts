@@ -18,6 +18,10 @@ import { RegisterComponent } from './register/register.component';
 import { SeatsComponent } from './seats/seats.component';
 import { CalendarComponent } from './calendar/calendar.component';
 
+import { StateService } from './state.service';
+import { TimesPipe } from './utils/times.pipe/times.pipe';
+import { MyBookingsComponent } from './my-bookings/my-bookings.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +31,9 @@ import { CalendarComponent } from './calendar/calendar.component';
     MyProfileComponent,
     RegisterComponent,
     SeatsComponent,
-    CalendarComponent
+    CalendarComponent,
+    TimesPipe,
+    MyBookingsComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +43,8 @@ import { CalendarComponent } from './calendar/calendar.component';
     ApolloModule.withClient(client)
   ],
   providers: [
-    AuthenticationService
+    AuthenticationService,
+    StateService
   ],
   bootstrap: [AppComponent]
 })
