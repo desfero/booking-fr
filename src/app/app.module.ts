@@ -21,6 +21,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { StateService } from './state.service';
 import { TimesPipe } from './utils/times.pipe/times.pipe';
 import { MyBookingsComponent } from './my-bookings/my-bookings.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MyBookingsComponent } from './my-bookings/my-bookings.component';
     SeatsComponent,
     CalendarComponent,
     TimesPipe,
-    MyBookingsComponent
+    MyBookingsComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

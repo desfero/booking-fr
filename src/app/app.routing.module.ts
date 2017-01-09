@@ -8,6 +8,7 @@ import { MyProfileComponent }  from './my-profile/my-profile.component';
 import { SeatsComponent }  from './seats/seats.component';
 import { CalendarComponent }  from './calendar/calendar.component';
 import { MyBookingsComponent } from './my-bookings/my-bookings.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/search', pathMatch: 'full' },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'my-profile', component: MyProfileComponent },
   { path: 'seats', component: SeatsComponent },
   { path: 'calendar', component: CalendarComponent },
-  { path: 'my-bookings', component: MyBookingsComponent}
+  { path: 'my-bookings', component: MyBookingsComponent },
+  { path: 'payment', component: PaymentComponent }
 ];
 
 @NgModule({

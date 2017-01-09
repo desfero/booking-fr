@@ -17,7 +17,7 @@
         <!--<span [hidden]="!seatInput{{seat}}.errors.required">Select seat</span>-->
       <!--</div>-->
     </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!seatsForm.form.valid">Next</button>
   </form>
 
-  <button type="submit" class="btn btn-primary" [disabled]="!seatsForm.form.valid">Next</button>
 </div>

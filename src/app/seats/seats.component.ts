@@ -1,6 +1,6 @@
 import 'rxjs/add/operator/map';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { Observable }    from 'rxjs/Observable';
 import { StateService } from '../state.service';
 
@@ -13,9 +13,9 @@ export class SeatsComponent implements OnInit {
   public adultsSeats: Array<String>;
   public adults$: Observable<Number>;
   public childrens$: Observable<Number>;
-  public seats$: Observable<String>;
+  public seats$: Observable<String[]>;
 
-  constructor(private route: ActivatedRoute, private stateService: StateService) {}
+  constructor(private route: Router, private stateService: StateService) {}
 
   ngOnInit() {
     this.adultsSeats = [];
@@ -25,6 +25,6 @@ export class SeatsComponent implements OnInit {
   }
 
   next() {
-
+    this.route.navigate(['/payment']);
   }
 }

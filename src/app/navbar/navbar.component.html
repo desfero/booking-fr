@@ -16,7 +16,9 @@
           </a>
           <div class="dropdown-menu" >
             <a class="dropdown-item" (click)="logout(); $event.preventDefault()" href="#" >Logout</a>
-            <a class="nav-link" routerLink="/my-bookings">My bookings</a>
+            <a class="dropdown-item" routerLink="/my-bookings">My bookings</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/search">Book a flight</a>
           </div>
         </li>
       </ul>
