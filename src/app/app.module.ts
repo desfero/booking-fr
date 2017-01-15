@@ -22,6 +22,7 @@ import { StateService } from './state.service';
 import { TimesPipe } from './utils/times.pipe/times.pipe';
 import { MyBookingsComponent } from './my-bookings/my-bookings.component';
 import { PaymentComponent } from './payment/payment.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { PaymentComponent } from './payment/payment.component';
     CalendarComponent,
     TimesPipe,
     MyBookingsComponent,
-    PaymentComponent
+    PaymentComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

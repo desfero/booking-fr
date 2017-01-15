@@ -9,6 +9,7 @@ import { SeatsComponent }  from './seats/seats.component';
 import { CalendarComponent }  from './calendar/calendar.component';
 import { MyBookingsComponent } from './my-bookings/my-bookings.component';
 import { PaymentComponent } from './payment/payment.component';
+import {CartComponent} from "./cart/cart.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/search', pathMatch: 'full' },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'seats', component: SeatsComponent },
   { path: 'calendar', component: CalendarComponent },
   { path: 'my-bookings', component: MyBookingsComponent },
-  { path: 'payment', component: PaymentComponent }
+  { path: 'payment', component: PaymentComponent },
+  { path: 'cart', component: CartComponent}
 ];
 
 @NgModule({
