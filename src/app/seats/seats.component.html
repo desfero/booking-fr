@@ -1,13 +1,13 @@
 <div class="container" >
   <form (ngSubmit)="next()" #seatsForm="ngForm">
-    <div *ngFor="let seat of adults$ | async | times" class="form-group"
+    <div *ngFor="let seat of numberOfPassengers$ | async | times" class="form-group"
          [class.has-danger]="(seatInput + seat).errors && ((seatInput + seat).dirty || (seatInput + seat).touched)" >
 
-      <label for="seat">Adult {{seat + 1}} seat</label>
+      <label for="seat">Passenger {{seat + 1}} seat</label>
       <select id="seat"
               class="form-control"
               required
-              [(ngModel)]="adultsSeats[seat]"
+              [(ngModel)]="selectedSeats[seat]"
               name="seat"
               #seatInput{{seat}}="ngModel" >
         <option *ngFor="let s of seats$ | async" value="{{s}}">{{s}}</option>

@@ -8,7 +8,7 @@ export class StateService {
   private bookingSubject: BehaviorSubject<Object>;
 
   public schedule$: Observable<{ seats: Array<String> }>;
-  public booking$: Observable<{ adults: Number, childrens: Number }>;
+  public booking$: Observable<{ adults: number, childrens: number, seats: Array<String> }>;
 
   constructor() {
     this.scheduleSubject = new BehaviorSubject<Object>({});

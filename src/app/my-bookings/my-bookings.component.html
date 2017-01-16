@@ -1,5 +1,15 @@
-<ul>
-  <li *ngFor="let booking of bookings$ | async">
-    <p>TEST</p>
-  </li>
-</ul>
+<div class="container" >
+  <div *ngFor="let booking of bookings$ | async" class="card">
+    <div class="card-block">
+      <h4 class="card-title">
+        From: {{booking.schedule.from}} on {{booking.schedule.departure | date: 'medium'}}<br/>
+        To: {{booking.schedule.to}} on {{booking.schedule.arrival | date: 'medium'}}
+      </h4>
+      <h6 class="card-subtitle mb-2 text-muted">Confirmation Number: {{booking._id}}</h6>
+      <p class="card-text">
+        You have seats for {{booking.adults}} adults, {{booking.childrens}} childrens and {{booking.infants}} infants. <br/>
+        <b>You have following seats: <span *ngFor="let seat of booking.seats" >{{seat}}</span></b>
+      </p>
+    </div>
+  </div>
+</div>

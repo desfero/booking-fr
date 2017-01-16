@@ -12,29 +12,19 @@ const Bookings = gql `
   query Bookings {
     bookings {
       _id,
-    schedule {
-      _id,
-      departure,
-      arrival,
-      from,
-      to,
-      price,
-      seats
-    },
-    firstPassenger {
-      _id,
-      name,
-      surname,
-      createdAt,
-      updatedAt,
-      email
+      schedule {
+        departure,
+        arrival,
+        from,
+        to,
+        price,
+      },
+      adults,
+      childrens,
+      infants,
+      seats,
     }
-    otherPassengers{
-      firstName,
-      lastName
-    }
-    }
-    }
+  }
 `;
 
 @Component({
