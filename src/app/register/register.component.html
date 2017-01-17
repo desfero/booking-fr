@@ -14,11 +14,12 @@
       <input type="text"
              id="inputName"
              name="name"
+             [(ngModel)]="nameInput"
              class="form-control"
              placeholder="Name"
              required
              autofocus
-             #name>
+             #name="ngModel">
       <div *ngIf="name.errors && (name.dirty || name.touched)" class="form-control-feedback">
         <span [hidden]="!name.errors.required">Name is required</span>
       </div>
@@ -29,11 +30,12 @@
       <input type="text"
              id="inputSurname"
              name="surname"
+             [(ngModel)]="surnameInput"
              class="form-control"
              placeholder="Surname"
              required
              autofocus
-             #surname>
+             #surname="ngModel">
       <div *ngIf="surname.errors && (surname.dirty || surname.touched)" class="form-control-feedback">
         <span [hidden]="!surname.errors.required">Username is required</span>
       </div>
@@ -43,12 +45,13 @@
       <label for="inputEmail" class="sr-only">Email</label>
       <input type="text"
              id="inputEmail"
+             [(ngModel)]="emailInput"
              name="email"
              class="form-control"
              placeholder="Email"
              required
              autofocus
-             #email>
+             #email="ngModel">
       <div *ngIf="email.errors && (email.dirty || email.touched)" class="form-control-feedback">
         <span [hidden]="!email.errors.required">Email is required</span>
       </div>
@@ -58,16 +61,17 @@
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password"
              id="inputPassword"
+             [(ngModel)]="passwordInput"
              name="password"
              class="form-control"
              placeholder="Password"
              required
-             #password>
+             #password="ngModel">
       <div *ngIf="password.errors && (password.dirty || password.touched)" class="form-control-feedback">
         <span [hidden]="!password.errors.required">Password is required</span>
       </div>
     </div>
     <button class="btn btn-lg btn-primary btn-block"
-            type="submit">Register</button>
+            type="submit" [disabled]="!loginForm.form.valid">Register</button>
   </form>
 </div>

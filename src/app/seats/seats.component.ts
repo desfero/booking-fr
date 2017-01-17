@@ -22,9 +22,15 @@ export class SeatsComponent implements OnInit {
     this.numberOfPassengers$ = this.stateService.booking$.map(b => b.adults + b.childrens);
     this.seats$ = this.stateService.schedule$.map(b => b.seats);
 
+    //this.seats$.subscribe(seats => this.seats);
+
     this.stateService.booking$.subscribe(booking => {
       this.booking = booking
     });
+  }
+
+  isAlreadySelected(seat, inx) {
+    return this.selectedSeats.filter((e, i) => i !== inx).indexOf(seat) >= 0;
   }
 
   next() {
