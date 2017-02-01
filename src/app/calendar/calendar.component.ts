@@ -27,12 +27,11 @@ const Schedules = gql`
 export class CalendarComponent implements OnInit {
 
   constructor(private router: Router, private apollo: Angular2Apollo, private stateService: StateService) {}
-
+  // TODO: handle seat select logic
   ngOnInit() {
     this.apollo.watchQuery({
       query: Schedules
     }).subscribe(({data}) => {
-      // TODO
       this.stateService.changeSchedule(data.schedules[0]);
       this.router.navigate(['/seats'])
     });
